@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Order Pickup — Dirty Delta Water</title>
+  <meta name="description" content="Order your Dirty Delta Water pickup online — dirty sodas, customer creations, dirty lemonades, teas, coffees, and Red Bull infusions. Contra Costa County, CA." />
+
+  <!-- Open Graph (so the link looks good when shared on Instagram) -->
+  <meta property="og:title" content="Order Pickup — Dirty Delta Water" />
+  <meta property="og:description" content="Build your drink and order ahead for pickup. Dirty sodas, customer creations, lemonades, teas & more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dirtydeltawater.com/order" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #162570;
+      --navy-dark:  #0E1A52;
+      --ocean:      #3EB4E0;
+      --ocean-light:#6BCBE8;
+      --orange:     #F0820C;
+      --orange-dark:#D4700A;
+      --black:      #0D0D0D;
+      --white:      #FFFFFF;
+      --sky:        #EBF6FC;
+      --text:       #1A1A2E;
+      --muted:      #5A6A8A;
+      --border:     rgba(22, 37, 112, 0.14);
+      --radius:     14px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 500px at 50% -200px, rgba(62, 180, 224, 0.18), transparent 70%),
+        var(--sky);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 18px 80px;
+    }
+
+    /* ─── Header ─── */
+    header {
+      text-align: center;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, #1a3a8a 100%);
+      color: var(--white);
+      padding: 40px 24px 56px;
+      border-bottom-left-radius: 32px;
+      border-bottom-right-radius: 32px;
+      box-shadow: 0 12px 40px rgba(22, 37, 112, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: -1px;
+      height: 22px;
+      background: var(--ocean);
+      -webkit-mask: radial-gradient(14px at 14px 0, transparent 98%, #000) repeat-x;
+      mask: radial-gradient(14px at 14px 0, transparent 98%, #000) repeat-x;
+      -webkit-mask-size: 28px 22px;
+      mask-size: 28px 22px;
+      opacity: 0.9;
+    }
+    .logo-badge {
+      width: 148px;
+      margin: 0 auto 4px;
+      background: var(--white);
+      border-radius: 22px;
+      padding: 12px 12px 10px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+    }
+    .logo-badge img { width: 100%; height: auto; display: block; }
+    .header-sub {
+      display: inline-block;
+      margin-top: 14px;
+      font-weight: 800;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--white);
+      background: var(--orange);
+      border-radius: 999px;
+      padding: 7px 16px;
+    }
+    .tagline {
+      margin-top: 16px;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 600;
+    }
+
+    /* ─── Card sections ─── */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      margin-top: 18px;
+      box-shadow: 0 6px 20px rgba(22, 37, 112, 0.06);
+    }
+    .wrap > form > .card:first-of-type { margin-top: -28px; position: relative; z-index: 2; }
+
+    .section-label {
+      display: inline-block;
+      font-weight: 800;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--orange);
+      background: rgba(240, 130, 12, 0.1);
+      border: 1px solid rgba(240, 130, 12, 0.25);
+      border-radius: 999px;
+      padding: 5px 12px;
+      margin-bottom: 12px;
+    }
+    .card h2 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 1.18rem;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .card .hint {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    /* ─── Text inputs ─── */
+    .field { margin-bottom: 14px; }
+    .field:last-child { margin-bottom: 0; }
+    .field label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .field .req { color: var(--orange); }
+    input[type="text"], input[type="tel"], input[type="email"],
+    input[type="date"], input[type="time"], input[type="number"], textarea {
+      width: 100%;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      color: var(--text);
+      background: var(--sky);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 13px 14px;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      background: var(--white);
+      border-color: var(--ocean);
+      box-shadow: 0 0 0 3px rgba(62, 180, 224, 0.2);
+    }
+    textarea { min-height: 84px; resize: vertical; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 480px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    /* ─── Option chips (checkbox / radio) ─── */
+    .opts { display: grid; gap: 10px; }
+    .opts.cols-2 { grid-template-columns: 1fr 1fr; }
+    .opts.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+    @media (max-width: 520px) { .opts.cols-3 { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 380px) { .opts.cols-2, .opts.cols-3 { grid-template-columns: 1fr; } }
+
+    .chip {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--sky);
+      border: 1.5px solid var(--border);
+      border-radius: 11px;
+      padding: 12px 14px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text);
+      transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+      user-select: none;
+    }
+    .chip:active { transform: scale(0.99); }
+    .chip input { position: absolute; opacity: 0; pointer-events: none; }
+    .chip .box {
+      flex: 0 0 auto;
+      width: 22px; height: 22px;
+      border: 2px solid var(--ocean);
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      background: var(--white);
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .chip .box.round { border-radius: 50%; }
+    .chip .box::after {
+      content: "";
+      width: 11px; height: 11px;
+      border-radius: 3px;
+      transform: scale(0);
+      transition: transform 0.12s ease;
+      background: var(--white);
+    }
+    .chip .box.round::after { border-radius: 50%; }
+    .chip input:checked ~ .box { background: var(--orange); border-color: var(--orange); }
+    .chip input:checked ~ .box::after { transform: scale(1); }
+    .chip:has(input:checked) {
+      border-color: var(--orange);
+      background: rgba(240, 130, 12, 0.08);
+    }
+    .chip .label-txt { flex: 1; }
+    .chip .price {
+      font-weight: 800;
+      color: var(--orange);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    .chip.disabled { opacity: 0.45; cursor: not-allowed; }
+
+    /* ─── Conditional reveal blocks ─── */
+    .reveal { display: none; margin-top: 16px; }
+    .reveal.show { display: block; animation: fadeIn 0.25s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+    .subhead {
+      font-weight: 800;
+      color: var(--navy);
+      font-size: 1rem;
+      margin: 18px 0 8px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--border);
+    }
+    .subhead:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+    .mini-note { font-size: 0.82rem; color: var(--muted); margin-bottom: 10px; }
+
+    .divider {
+      text-align: center;
+      font-weight: 800;
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      margin: 16px 0;
+      position: relative;
+    }
+    .divider::before, .divider::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 38%;
+      height: 1px;
+      background: var(--border);
+    }
+    .divider::before { left: 0; }
+    .divider::after { right: 0; }
+
+    /* ─── Submit ─── */
+    .submit-wrap { margin-top: 22px; }
+    .btn-submit {
+      width: 100%;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--white);
+      background: var(--orange);
+      border: none;
+      border-radius: 12px;
+      padding: 16px;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+    .btn-submit:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 10px 26px rgba(240, 130, 12, 0.38); }
+    .btn-submit:disabled { opacity: 0.7; cursor: wait; transform: none; }
+
+    .form-note { text-align: center; font-size: 0.83rem; color: var(--muted); margin-top: 12px; }
+    .form-note a { color: var(--navy); font-weight: 700; }
+
+    .form-message { display: none; border-radius: 11px; padding: 14px; margin-top: 14px; font-weight: 700; text-align: center; }
+    .form-message.success { display: none; background: rgba(62, 180, 224, 0.14); color: var(--navy); border: 1.5px solid var(--ocean); }
+    .form-message.error { background: rgba(192, 57, 43, 0.1); color: #C0392B; border: 1.5px solid rgba(192, 57, 43, 0.4); }
+
+    footer { text-align: center; margin-top: 30px; font-size: 0.8rem; color: var(--muted); }
+    footer a { color: var(--navy); font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-badge">
+      <img src="images/image2.jpeg" alt="Captain Delta Pop — Dirty Delta Water mascot logo" />
+    </div>
+    <div class="header-sub">Online Pickup Order</div>
+    <p class="tagline">Build your drink — we'll have it ready. 🥤</p>
+  </header>
+
+  <div class="wrap">
+    <form id="orderForm" method="POST">
+      <!-- Web3Forms config: replace the access_key with the real key created with DDWOLO@Yahoo.com (that's where orders are emailed) -->
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+      <input type="hidden" name="subject" value="🥤 New Pickup Order — Dirty Delta Water" />
+      <input type="hidden" name="from_name" value="Dirty Delta Water Order Form" />
+      <!-- honeypot spam trap -->
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+      <!-- ── Customer Info ── -->
+      <div class="card">
+        <span class="section-label">Step 1 · Your Info</span>
+        <h2>Customer Information</h2>
+        <p class="hint">So we know who's picking up and when.</p>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="name">Name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="925-555-0100" required />
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" />
+          </div>
+          <div class="field">
+            <label for="social">Instagram / Social Handle</label>
+            <input type="text" id="social" name="social_handle" placeholder="@yourhandle" />
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="field">
+            <label for="pickup_date">Pickup Date <span class="req">*</span></label>
+            <input type="date" id="pickup_date" name="pickup_date" required />
+          </div>
+          <div class="field">
+            <label for="pickup_time">Preferred Pickup Time <span class="req">*</span></label>
+            <input type="time" id="pickup_time" name="pickup_time" required />
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Order types ── -->
+      <div class="card">
+        <span class="section-label">Step 2 · Pick Your Drinks</span>
+        <h2>What Would You Like to Order?</h2>
+        <p class="hint">Check everything you want — each one opens its options below.</p>
+        <div class="opts" id="orderTypes"></div>
+      </div>
+
+      <!-- ── Regular Menu ── -->
+      <div class="card reveal" data-block="regular">
+        <span class="section-label">Regular Menu · 24 oz · $7</span>
+        <h2>Regular Menu Drinks</h2>
+        <div class="opts cols-2" id="regularDrinks"></div>
+      </div>
+
+      <!-- ── Customer Creation ── -->
+      <div class="card reveal" data-block="creation">
+        <span class="section-label">Customer Creation · 24 oz</span>
+        <h2>Customer Creations</h2>
+        <p class="hint">Pick a fan favorite, or scroll down to build your own.</p>
+        <div class="opts" id="ccPremade"></div>
+
+        <div class="divider">OR CREATE YOUR OWN</div>
+
+        <div class="subhead">Choose Your Base</div>
+        <div class="opts cols-2" id="ccBase"></div>
+
+        <div class="subhead">Choose 1–3 Syrup Flavors</div>
+        <p class="mini-note" id="syrupCounter">0 of 3 selected</p>
+        <div class="opts cols-2" id="ccSyrups"></div>
+
+        <div class="subhead">Choose Your Creamer</div>
+        <div class="opts cols-2" id="ccCreamer"></div>
+
+        <div class="subhead">Choose Your Juice <span style="font-weight:600;color:var(--muted)">(optional)</span></div>
+        <div class="opts cols-2" id="ccJuice"></div>
+
+        <div class="field" style="margin-top:16px">
+          <label for="cc_notes">Additional Instructions</label>
+          <textarea id="cc_notes" name="creation_notes" placeholder="Light ice, extra cream, etc."></textarea>
+        </div>
+      </div>
+
+      <!-- ── Dirty Lemonade ── -->
+      <div class="card reveal" data-block="lemonade">
+        <span class="section-label">Dirty Lemonade · 32 oz · $9</span>
+        <h2>Dirty Lemonade</h2>
+        <p class="hint">Choose your syrup flavors.</p>
+        <div class="opts cols-2" id="lemonadeSyrups"></div>
+      </div>
+
+      <!-- ── Dirty Tea / Coffee ── -->
+      <div class="card reveal" data-block="teacoffee">
+        <span class="section-label">Dirty Tea / Coffee · 32 oz · $10</span>
+        <h2>Dirty Tea or Dirty Coffee</h2>
+
+        <div class="subhead">Tea or Coffee?</div>
+        <div class="opts cols-2" id="tcType"></div>
+
+        <div class="subhead">Choose Your Syrup Flavors</div>
+        <div class="opts cols-2" id="tcSyrups"></div>
+
+        <div class="subhead">Add a Sauce</div>
+        <div class="opts cols-2" id="tcSauces"></div>
+      </div>
+
+      <!-- ── Dirty Red Bull ── -->
+      <div class="card reveal" data-block="redbull">
+        <span class="section-label">Dirty Red Bull · 24 oz · $12</span>
+        <h2>Dirty Red Bull</h2>
+        <p class="hint">Choose your flavors.</p>
+        <div class="opts cols-2" id="redbullSyrups"></div>
+      </div>
+
+      <!-- ── To-Go Kit ── -->
+      <div class="card">
+        <span class="section-label">Add-On</span>
+        <h2>Make It a To-Go Kit!</h2>
+        <p class="hint">Take the build-it-yourself fun home.</p>
+        <div class="opts" id="togoKit"></div>
+        <div class="reveal" data-block="togo">
+          <div class="field" style="margin-top:14px; max-width:160px">
+            <label for="togo_qty">Quantity</label>
+            <input type="number" id="togo_qty" name="togo_kit_qty" min="1" value="1" />
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Order notes ── -->
+      <div class="card">
+        <span class="section-label">Step 3 · Anything Else?</span>
+        <h2>Order Notes</h2>
+        <p class="hint">Quantities, allergies, multiple drinks, special requests — tell us here.</p>
+        <div class="field">
+          <textarea id="order_notes" name="order_notes" placeholder="e.g. 2x Black Diamond, 1x build-your-own. Allergic to coconut."></textarea>
+        </div>
+      </div>
+
+      <!-- ── Payment ── -->
+      <div class="card">
+        <span class="section-label">Step 4 · Payment</span>
+        <h2>Payment Method</h2>
+        <p class="hint">All payment is collected at pickup.</p>
+        <div class="opts" id="payment"></div>
+      </div>
+
+      <!-- ── Submit ── -->
+      <div class="submit-wrap">
+        <button type="submit" class="btn-submit">Place My Order 🛒</button>
+        <p class="form-note">We'll confirm your order by text/call. Questions? <a href="tel:9254838887">925-483-8887</a></p>
+        <div class="form-message success" id="formSuccess">
+          ✅ Order received! We'll text you to confirm your pickup time.
+        </div>
+        <div class="form-message error" id="formError">
+          Something went wrong. Please call/text us at 925-483-8887.
+        </div>
+      </div>
+    </form>
+
+    <footer>
+      Dirty Delta Water · Contra Costa County, CA<br>
+      <a href="https://instagram.com/dirtydeltawater" target="_blank" rel="noopener">@dirtydeltawater</a>
+    </footer>
+  </div>
+
+  <script>
+    // ─── Option data ───
+    const orderTypes = [
+      { id: 'regular',   label: 'Regular Menu Drink (24 oz)', price: '$7',  block: 'regular' },
+      { id: 'creation',  label: 'Customer Creation (24 oz)',  price: '$8',  block: 'creation' },
+      { id: 'lemonade',  label: 'Dirty Lemonade (32 oz)',     price: '$9',  block: 'lemonade' },
+      { id: 'teacoffee', label: 'Dirty Tea or Coffee (32 oz)',price: '$10', block: 'teacoffee' },
+      { id: 'redbull',   label: 'Dirty Red Bull (24 oz)',     price: '$12', block: 'redbull' },
+    ];
+    const regularDrinks = ['Black Diamond','Delta Sunrise','Delta Sunset','Delta Fog','P World','Pirates Punch'];
+    const ccPremade = [
+      { label: 'Crystal — Caramel Apple', price: '$8' },
+      { label: 'Alyssa — Mangonada', price: '$8' },
+      { label: 'Frank — Blue Raspberry / Green Apple Red Bull', price: '$12' },
+      { label: 'Francisco — Triple Berry Red Bull', price: '$12' },
+    ];
+    const bases = ['Coke','Dr Pepper','Sprite','Root Beer','Orange Soda','Ginger Ale'];
+    const baseRedbull = 'Red Bull (+$12)';
+    const syrups = ['Vanilla','Raspberry','Pineapple','Green Apple','Strawberry','Coconut','Blue Raspberry','Classic Caramel','Cupcake','Blackberry','Cherry','Watermelon','Sour Candy','Pomegranate','Toasted Marshmallow','Brown Sugar Cinnamon'];
+    const creamers = ['French Vanilla','Coconut','Caramel Macchiato'];
+    const juices = ['Lemon','Lime'];
+    const tcSauces = ['Chocolate','Caramel','White Chocolate'];
+    const payment = ['Card at Pickup (preferred)','Cash at Pickup','Venmo / PayPal / Zelle'];
+
+    // ─── Render helpers ───
+    function chip(name, value, type, opts = {}) {
+      const round = type === 'radio' ? ' round' : '';
+      const price = opts.price ? `<span class="price">${opts.price}</span>` : '';
+      const data = opts.data || '';
+      return `<label class="chip"${data}>
+        <input type="${type}" name="${name}" value="${value.replace(/"/g, '&quot;')}" />
+        <span class="box${round}"></span>
+        <span class="label-txt">${value}</span>${price}
+      </label>`;
+    }
+    const render = (id, html) => { document.getElementById(id).innerHTML = html; };
+
+    render('orderTypes', orderTypes.map(o =>
+      chip('order_types', o.label, 'checkbox', { price: o.price, data: ` data-target="${o.block}"` })
+    ).join(''));
+
+    render('regularDrinks', regularDrinks.map(d => chip('regular_drinks', d, 'checkbox')).join(''));
+    render('ccPremade', ccPremade.map(c => chip('creation_premade', c.label, 'checkbox', { price: c.price })).join(''));
+    render('ccBase', [...bases.map(b => chip('creation_base', b, 'radio')), chip('creation_base', baseRedbull, 'radio', { price: '$12' })].join(''));
+    render('ccSyrups', syrups.map(s => chip('creation_syrups', s, 'checkbox', { data: ' data-syrup' })).join(''));
+    render('ccCreamer', creamers.map(c => chip('creation_creamer', c, 'radio')).join(''));
+    render('ccJuice', juices.map(j => chip('creation_juice', j, 'checkbox')).join(''));
+    render('lemonadeSyrups', syrups.map(s => chip('lemonade_syrups', s, 'checkbox')).join(''));
+    render('tcType', ['Tea','Coffee'].map(t => chip('teacoffee_type', t, 'radio')).join(''));
+    render('tcSyrups', syrups.map(s => chip('teacoffee_syrups', s, 'checkbox')).join(''));
+    render('tcSauces', tcSauces.map(s => chip('teacoffee_sauces', s, 'checkbox')).join(''));
+    render('redbullSyrups', syrups.map(s => chip('redbull_flavors', s, 'checkbox')).join(''));
+    render('togoKit', chip('togo_kit', 'Yes — make it a To-Go Kit', 'checkbox', { data: ' data-target="togo"' }));
+    render('payment', payment.map(p => chip('payment', p, 'radio')).join(''));
+
+    // ─── Conditional reveals ───
+    document.querySelectorAll('[data-target]').forEach(label => {
+      const input = label.querySelector('input');
+      const target = label.getAttribute('data-target');
+      input.addEventListener('change', () => {
+        const block = document.querySelector(`[data-block="${target}"]`);
+        if (block) block.classList.toggle('show', input.checked);
+      });
+    });
+
+    // ─── Limit build-your-own syrups to 3 ───
+    const syrupBoxes = () => Array.from(document.querySelectorAll('[data-syrup] input'));
+    const counter = document.getElementById('syrupCounter');
+    document.getElementById('ccSyrups').addEventListener('change', () => {
+      const checked = syrupBoxes().filter(b => b.checked);
+      counter.textContent = `${checked.length} of 3 selected`;
+      const atMax = checked.length >= 3;
+      syrupBoxes().forEach(b => {
+        b.disabled = atMax && !b.checked;
+        b.closest('.chip').classList.toggle('disabled', b.disabled);
+      });
+    });
+
+    // ─── Submit via Web3Forms (groups multi-checkbox values cleanly) ───
+    const form = document.getElementById('orderForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('.btn-submit');
+      const successMsg = document.getElementById('formSuccess');
+      const errorMsg = document.getElementById('formError');
+
+      submitBtn.textContent = 'Placing order...';
+      submitBtn.disabled = true;
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+
+      try {
+        // Group repeated checkbox names into one comma-joined value for a clean email.
+        const fd = new FormData(form);
+        const payload = {};
+        for (const [key, val] of fd.entries()) {
+          if (val === '' || val === 'on') continue;
+          payload[key] = payload[key] ? payload[key] + ', ' + val : val;
+        }
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const json = await res.json();
+        if (json.success) {
+          form.reset();
+          document.querySelectorAll('.reveal').forEach(b => b.classList.remove('show'));
+          successMsg.style.display = 'block';
+          submitBtn.textContent = 'Order Sent! 🎉';
+          successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          throw new Error(json.message || 'submit failed');
+        }
+      } catch {
+        errorMsg.style.display = 'block';
+        submitBtn.textContent = 'Place My Order 🛒';
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+</html>

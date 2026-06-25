@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Dirty Delta Water — Custom Dirty Sodas | Contra Costa County, CA</title>
+  <meta name="description" content="Dirty Delta Water serves custom dirty sodas, teas, lemonades, and Red Bull infusions in Contra Costa County, CA. Book us for private parties, events, and catering. Starting at $7." />
+  <meta name="keywords" content="dirty soda, dirty sodas Antioch, specialty drinks Contra Costa, dirty soda bar, event drinks Bay Area, dirty lemonade, dirty tea, Red Bull infusion" />
+  <link rel="canonical" href="https://dirtydeltawater.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dirty Delta Water — Custom Dirty Sodas" />
+  <meta property="og:description" content="Fun, flavorful specialty drinks built for the Bay Area. Dirty sodas, teas, lemonades, and event catering." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dirtydeltawater.com/" />
+  <meta property="og:image" content="https://dirtydeltawater.com/images/DA11011A-AD4D-4A9E-931D-E3875DBF0A30.PNG" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #162570;
+      --navy-dark:  #0E1A52;
+      --ocean:      #3EB4E0;
+      --ocean-light:#6BCBE8;
+      --orange:     #F0820C;
+      --orange-dark:#D4700A;
+      --black:      #0D0D0D;
+      --white:      #FFFFFF;
+      --sky:        #EBF6FC;
+      --text:       #1A1A2E;
+      --muted:      #5A6A8A;
+      --border:     rgba(22, 37, 112, 0.12);
+      --radius:     12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ─── Buttons ─── */
+    .btn {
+      display: inline-block;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      border-radius: var(--radius);
+      padding: 14px 28px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      border: none;
+      line-height: 1;
+    }
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+    .btn-primary:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(240, 130, 12, 0.35);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--navy);
+      transform: translateY(-2px);
+    }
+    .btn-navy {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .btn-navy:hover {
+      background: var(--navy-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(22, 37, 112, 0.3);
+    }
+
+    /* ─── Section Labels ─── */
+    .section-label {
+      display: inline-block;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--orange);
+      background: rgba(240, 130, 12, 0.1);
+      border: 1px solid rgba(240, 130, 12, 0.25);
+      border-radius: 999px;
+      padding: 6px 14px;
+      margin-bottom: 16px;
+    }
+
+    /* ─── Nav ─── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(22, 37, 112, 0.97);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      padding: 0 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .nav-logo {
+      font-family: 'Luckiest Guy', cursive;
+      font-size: 1.4rem;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+    .nav-logo span { color: var(--ocean); }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { font-size: 0.9rem; padding: 10px 22px; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--navy-dark);
+      padding: 16px 24px 24px;
+      gap: 4px;
+    }
+    .mobile-menu a {
+      color: rgba(255,255,255,0.85);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: block;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu.open { display: flex; }
+
+    /* ─── Hero ─── */
+    #home {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #1a3a8a 100%);
+      padding-top: 68px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Water ripple overlay */
+    #home::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(62, 180, 224, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(62, 180, 224, 0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      padding: 80px 24px 64px;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-text {}
+    .hero-eyebrow {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--ocean);
+      margin-bottom: 16px;
+    }
+    .hero-title {
+      font-family: 'Luckiest Guy', cursive;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      margin-bottom: 20px;
+    }
+    .hero-title .accent { color: var(--orange); }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.6;
+      margin-bottom: 36px;
+      font-weight: 600;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+    .hero-phone-note {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 16px;
+    }
+    .hero-image-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      max-width: 520px;
+      border-radius: 16px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+      animation: floatUp 0.7s ease-out both;
+    }
+    @keyframes floatUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Wave divider */
+    .wave-divider {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .wave-divider svg { display: block; }
+
+    /* ─── Trust Bar ─── */
+    .trust-bar {
+      background: var(--ocean);
+      padding: 14px 24px;
+    }
+    .trust-bar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px 48px;
+    }
+    .trust-item {
+      color: var(--white);
+      font-weight: 800;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .trust-item .icon { font-size: 1.1rem; }
+
+    /* ─── About ─── */
+    #about {
+      padding: 96px 24px;
+      background: var(--sky);
+    }
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .about-image-wrap {
+      position: relative;
+    }
+    .about-image-wrap img {
+      border-radius: 16px;
+      box-shadow: 0 16px 48px rgba(22, 37, 112, 0.15);
+      width: 100%;
+    }
+    .about-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Luckiest Guy', cursive;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      padding: 14px 20px;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 24px rgba(240, 130, 12, 0.4);
+      line-height: 1.3;
+      text-align: center;
+    }
+    .about-text {}
+    .about-text h2 {
+      font-family: 'Luckiest Guy', cursive;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--navy);
+      letter-spacing: 0.02em;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+    .about-text p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .about-text p strong { color: var(--text); }
+    .about-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .pillar {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .pillar:hover { border-color: var(--ocean); }
+    .pillar-icon { font-size: 1.4rem; margin-bottom: 6px; }
+    .pillar-label {
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: var(--navy);
+    }
+    .pillar-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    /* ─── Services / Menu ─── */
+    #menu {
+      padding: 96px 24px;
+      background: var(--white);
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .section-header h2 {
+      font-family: 'Luckiest Guy', cursive;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--navy);
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .section-header p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      font-weight: 600;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .menu-grid {
+      max-width: 1100px;
+      margin: 0 auto 64px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .drink-card {
+      background: var(--sky);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .drink-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: var(--ocean);
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+      transform-origin: bottom;
+    }
+    .drink-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(22, 37, 112, 0.1);
+      border-color: rgba(62, 180, 224, 0.4);
+    }
+    .drink-card:hover::before { transform: scaleY(1); }
+    .drink-name {
+      font-family: 'Luckiest Guy', cursive;
+      font-size: 1.2rem;
+      color: var(--navy);
+      letter-spacing: 0.03em;
+      margin-bottom: 8px;
+    }
+    .drink-ingredients {
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .drink-price {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--orange);
+    }
+
+    /* Events row */
+    .events-row {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .event-card {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 28px;
+      color: var(--white);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .event-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(22, 37, 112, 0.35);
+    }
+    .event-icon { font-size: 2rem; margin-bottom: 12px; }
+    .event-title {
+      font-family: 'Luckiest Guy', cursive;
+      font-size: 1.15rem;
+      letter-spacing: 0.03em;
+      margin-bottom: 8px;
+      color: var(--ocean);
+    }
+    .event-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.72);
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    .event-tag {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--orange);
+      background: rgba(240, 130, 12, 0.15);
+      border-radius: 999px;
+      padding: 4px 12px;
+    }
+
+    /* Also serves row */
+    .also-serves {
+      max-width: 1100px;
+      margin: 32px auto 0;
+      background: linear-gradient(135deg, var(--ocean), var(--navy));
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .also-serves-text h3 {
+      font-family: 'Luckiest Guy', cursive;
+      font-size: 1.3rem;
+      color: var(--white);
+      letter-spacing: 0.03em;
+      margin-bottom: 4px;
+    }
+    .also-serves-text p {
+      color: rgba(255,255,255,0.78);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    /* ─── Contact ─── */
+    #contact {
+      padding: 96px 24px;
+      background: var(--navy-dark);
+    }
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-info {}
+    .contact-info h2 {
+      font-family: 'Luckiest Guy', cursive;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--white);
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .contact-info p {
+      color: rgba(255,255,255,0.72);
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    .contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--white);
+    }
+    .contact-item-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(62, 180, 224, 0.15);
+      border: 1px solid rgba(62, 180, 224, 0.3);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .contact-item-text .label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ocean);
+      margin-bottom: 2px;
+    }
+    .contact-item-text .value {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .contact-item-text .value a {
+      color: var(--white);
+      transition: color 0.2s;
+    }
+    .contact-item-text .value a:hover { color: var(--ocean); }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 10px 16px;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: background 0.2s, color 0.2s;
+    }
+    .social-link:hover {
+      background: rgba(62, 180, 224, 0.15);
+      color: var(--white);
+      border-color: rgba(62, 180, 224, 0.4);
+    }
+
+    /* Contact Form */
+    .contact-form-wrap {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 36px;
+    }
+    .contact-form-wrap h3 {
+      font-family: 'Luckiest Guy', cursive;
+      font-size: 1.4rem;
+      color: var(--white);
+      letter-spacing: 0.03em;
+      margin-bottom: 24px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ocean);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: var(--white);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255,255,255,0.3);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--ocean);
+      background: rgba(62, 180, 224, 0.08);
+    }
+    .form-group select option { background: var(--navy-dark); color: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .form-submit {
+      width: 100%;
+      margin-top: 8px;
+      padding: 15px;
+      font-size: 1rem;
+    }
+    .form-note {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      font-weight: 600;
+    }
+    /* Success/error states */
+    .form-message {
+      display: none;
+      padding: 14px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-top: 14px;
+      text-align: center;
+    }
+    .form-message.success {
+      background: rgba(0, 200, 100, 0.15);
+      border: 1px solid rgba(0, 200, 100, 0.3);
+      color: #4ded9a;
+    }
+    .form-message.error {
+      background: rgba(255, 60, 60, 0.12);
+      border: 1px solid rgba(255, 60, 60, 0.25);
+      color: #ff7a7a;
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      background: var(--black);
+      padding: 28px 24px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-brand {
+      font-family: 'Luckiest Guy', cursive;
+      font-size: 1.1rem;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .footer-brand span { color: var(--ocean); }
+    .footer-copy {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.35);
+      font-weight: 600;
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--ocean); }
+
+    /* ─── Animations ─── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 900px) {
+      .menu-grid { grid-template-columns: repeat(2, 1fr); }
+      .events-row { grid-template-columns: 1fr 1fr; }
+      .about-pillars { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 56px 24px 48px;
+        gap: 36px;
+      }
+      .hero-actions { justify-content: center; }
+      .hero-image-wrap { order: -1; }
+      .hero-image-wrap img { max-width: 340px; }
+
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .about-badge { right: 0; bottom: -16px; }
+
+      .menu-grid { grid-template-columns: 1fr; }
+      .events-row { grid-template-columns: 1fr; }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .form-row { grid-template-columns: 1fr; }
+
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+
+      .also-serves { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: 2rem; }
+      .about-pillars { grid-template-columns: 1fr; }
+      .contact-form-wrap { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Navigation ─── -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo">Dirty <span>Delta</span> Water</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#contact">Events</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary nav-cta">Book an Event</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" onclick="closeMobile()">About</a>
+      <a href="#menu" onclick="closeMobile()">Menu &amp; Drinks</a>
+      <a href="#contact" onclick="closeMobile()">Book an Event</a>
+      <a href="tel:9254838887" onclick="closeMobile()" style="color: var(--orange);">📞 Call 925-483-8887</a>
+    </div>
+  </nav>
+
+  <!-- ─── Hero ─── -->
+  <section id="home">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow">☠️ Contra Costa County's Specialty Soda Shop</div>
+        <h1 class="hero-title">
+          Fun Drinks.<br>
+          <span class="accent">Custom Flavors.</span><br>
+          Built for the Bay.
+        </h1>
+        <p class="hero-sub">
+          Dirty sodas, teas, lemonades, and Red Bull infusions — mixed your way.
+          Available for events, parties, and catering across the Bay Area.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Book an Event</a>
+          <a href="#menu" class="btn btn-outline">See the Menu</a>
+        </div>
+        <p class="hero-phone-note">Or call/text us: <a href="tel:9254838887" style="color: rgba(255,255,255,0.7); font-weight:800;">925-483-8887</a></p>
+      </div>
+      <div class="hero-image-wrap">
+        <img
+          src="images/DA11011A-AD4D-4A9E-931D-E3875DBF0A30.PNG"
+          alt="Five colorful Dirty Delta Water custom dirty sodas in a row"
+          loading="eager"
+        />
+      </div>
+    </div>
+
+    <!-- Wave bottom -->
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 64" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:64px;width:100%;">
+        <path d="M0,32 C240,64 480,0 720,32 C960,64 1200,0 1440,32 L1440,64 L0,64 Z" fill="#3EB4E0"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ─── Trust Bar ─── -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><span class="icon">👩‍💼</span> Women-Owned Business</div>
+      <div class="trust-item"><span class="icon">⭐</span> 30+ Years of Service Experience</div>
+      <div class="trust-item"><span class="icon">🎉</span> Private Parties &amp; Events Welcome</div>
+      <div class="trust-item"><span class="icon">🏫</span> School Giveback Program</div>
+      <div class="trust-item"><span class="icon">📍</span> Serving Contra Costa County &amp; the Bay Area</div>
+    </div>
+  </div>
+
+  <!-- Wave -->
+  <div class="wave-divider" style="background: #3EB4E0;">
+    <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;width:100%;">
+      <path d="M0,24 C360,48 720,0 1080,24 C1260,36 1380,12 1440,24 L1440,48 L0,48 Z" fill="#EBF6FC"/>
+    </svg>
+  </div>
+
+  <!-- ─── About ─── -->
+  <section id="about">
+    <div class="about-inner container">
+
+      <div class="about-image-wrap fade-up">
+        <img
+          src="images/image1.jpeg"
+          alt="Dirty Delta Water flyer featuring Captain Delta Pop mascot"
+          loading="lazy"
+        />
+        <div class="about-badge">
+          Captain<br>Delta Pop<br>🏴‍☠️
+        </div>
+      </div>
+
+      <div class="about-text fade-up">
+        <div class="section-label">About Dirty Delta Water</div>
+        <h2>We make drinks<br>that taste like<br>heaven.</h2>
+        <p>
+          Dirty Delta Water is a <strong>women-owned specialty drink business</strong> based in Contra Costa County.
+          We mix soda, syrups, and non-dairy creamers into unique, flavorful drinks you won't find anywhere else.
+        </p>
+        <p>
+          From our signature dirty sodas to <strong>custom customer creations</strong> — where you name your own drink — every cup is built to be an experience.
+          We also give back to local schools because we're as invested in this community as you are.
+        </p>
+
+        <div class="about-pillars">
+          <div class="pillar">
+            <div class="pillar-icon">🧪</div>
+            <div class="pillar-label">Custom Creations</div>
+            <div class="pillar-desc">Build your own, name it yourself</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🎪</div>
+            <div class="pillar-label">Events &amp; Parties</div>
+            <div class="pillar-desc">Private parties, car shows, more</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🏡</div>
+            <div class="pillar-label">Bay Area Local</div>
+            <div class="pillar-desc">Proudly serving Contra Costa County</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🏫</div>
+            <div class="pillar-label">School Giveback</div>
+            <div class="pillar-desc">We invest in our community</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Wave -->
+  <div class="wave-divider" style="background: #EBF6FC;">
+    <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;width:100%;">
+      <path d="M0,0 C360,48 720,0 1080,32 C1260,48 1380,16 1440,0 L1440,48 L0,48 Z" fill="#FFFFFF"/>
+    </svg>
+  </div>
+
+  <!-- ─── Menu / Services ─── -->
+  <section id="menu">
+    <div class="section-header fade-up">
+      <div class="section-label">The Menu</div>
+      <h2>Signature Dirty Sodas</h2>
+      <p>Every drink starts at $7. Customizations and specialty add-ons may vary the price.</p>
+    </div>
+
+    <div class="menu-grid">
+      <div class="drink-card fade-up">
+        <div class="drink-name">🖤 Black Diamond</div>
+        <div class="drink-ingredients">Dr Pepper · Lime Juice · Coconut Creamer</div>
+        <div class="drink-price">Starting at $7</div>
+      </div>
+      <div class="drink-card fade-up">
+        <div class="drink-name">🌅 Delta Sunrise</div>
+        <div class="drink-ingredients">Coke · Cherry Syrup · French Vanilla Creamer</div>
+        <div class="drink-price">Starting at $7</div>
+      </div>
+      <div class="drink-card fade-up">
+        <div class="drink-name">🌇 Delta Sunset</div>
+        <div class="drink-ingredients">Orange Soda · Vanilla Syrup · French Vanilla Creamer</div>
+        <div class="drink-price">Starting at $7</div>
+      </div>
+      <div class="drink-card fade-up">
+        <div class="drink-name">🌫️ Delta Fog</div>
+        <div class="drink-ingredients">Rootbeer · Vanilla Syrup · French Vanilla Creamer</div>
+        <div class="drink-price">Starting at $7</div>
+      </div>
+      <div class="drink-card fade-up">
+        <div class="drink-name">🍑 P-World</div>
+        <div class="drink-ingredients">Sprite · Peach Syrup · French Vanilla Creamer</div>
+        <div class="drink-price">Starting at $7</div>
+      </div>
+      <div class="drink-card fade-up">
+        <div class="drink-name">🏴‍☠️ Pirate's Punch</div>
+        <div class="drink-ingredients">Sprite · Peach Syrup · Cherry Syrup · Lime Juice · Coconut Creamer</div>
+        <div class="drink-price">Starting at $7</div>
+      </div>
+    </div>
+
+    <!-- More options -->
+    <div class="events-row" style="max-width:1100px; margin: 0 auto 32px;">
+      <div class="event-card fade-up">
+        <div class="event-icon">🍵</div>
+        <div class="event-title">Specialty Teas</div>
+        <div class="event-desc">Custom dirty tea blends made to order. Sweet, layered, and totally different from your average iced tea.</div>
+        <div class="event-tag">Starting at $8</div>
+      </div>
+      <div class="event-card fade-up">
+        <div class="event-icon">🍋</div>
+        <div class="event-title">Premium Lemonades</div>
+        <div class="event-desc">Fresh-flavored dirty lemonades with creative syrup and creamer combinations.</div>
+        <div class="event-tag">Starting at $9</div>
+      </div>
+      <div class="event-card fade-up">
+        <div class="event-icon">⚡</div>
+        <div class="event-title">Red Bull Infusions</div>
+        <div class="event-desc">Energy meets flavor. Red Bull-based dirty drinks for when you need the boost and the taste.</div>
+        <div class="event-tag">Starting at $12</div>
+      </div>
+    </div>
+
+    <!-- Also serves / events CTA -->
+    <div class="also-serves fade-up">
+      <div class="also-serves-text">
+        <h3>🎉 Need drinks for your event?</h3>
+        <p>We cater private parties, car shows, school events, and community gatherings. Get a custom quote — no phone tag, just fill out the form below.</p>
+      </div>
+      <a href="#contact" class="btn btn-primary" style="white-space: nowrap;">Get a Quote</a>
+    </div>
+  </section>
+
+  <!-- Wave into contact -->
+  <div class="wave-divider" style="background: #FFFFFF;">
+    <svg viewBox="0 0 1440 64" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:64px;width:100%;">
+      <path d="M0,32 C240,64 480,0 720,32 C960,64 1200,0 1440,32 L1440,64 L0,64 Z" fill="#0E1A52"/>
+    </svg>
+  </div>
+
+  <!-- ─── Contact ─── -->
+  <section id="contact">
+    <div class="contact-inner container">
+
+      <div class="contact-info fade-up">
+        <div class="section-label" style="color: var(--ocean); background: rgba(62,180,224,0.12); border-color: rgba(62,180,224,0.3);">Contact &amp; Booking</div>
+        <h2>Let's make your event unforgettable.</h2>
+        <p>Fill out the form and we'll get back to you within 24 hours. For fastest response, call or text us directly.</p>
+
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div class="contact-item-text">
+              <div class="label">Call or Text</div>
+              <div class="value"><a href="tel:9254838887">925-483-8887</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div class="contact-item-text">
+              <div class="label">Email</div>
+              <div class="value"><a href="mailto:dddirtysoda@dirtydeltawater.com">dddirtysoda@dirtydeltawater.com</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-text">
+              <div class="label">Service Area</div>
+              <div class="value">Contra Costa County &amp; Bay Area, CA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="https://www.tiktok.com/@dirty.delta.water" target="_blank" rel="noopener" class="social-link">🎵 TikTok</a>
+          <a href="https://www.instagram.com/dirtydeltawater" target="_blank" rel="noopener" class="social-link">📷 Instagram</a>
+          <a href="https://www.facebook.com/DirtyDeltaWater" target="_blank" rel="noopener" class="social-link">👍 Facebook</a>
+          <a href="https://www.yelp.com/biz/dirty-delta-water-pittsburg?uid=D3fEkSoFUUeKTjbFR5C1kA" target="_blank" rel="noopener" class="social-link">⭐ Yelp</a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap fade-up">
+        <h3>Send Us a Message</h3>
+        <form
+          id="contactForm"
+          method="POST"
+        >
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="925-555-0100" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="inquiry">What Can We Help With?</label>
+            <select id="inquiry" name="inquiry" required>
+              <option value="" disabled selected>Select one...</option>
+              <option value="Private Party">Private Party</option>
+              <option value="Event Catering">Event Catering</option>
+              <option value="Car Show">Car Show</option>
+              <option value="School Event">School Event</option>
+              <option value="To-Go Kit">To-Go Dirty Soda Kit</option>
+              <option value="General Question">General Question</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell Us More</label>
+            <textarea id="message" name="message" placeholder="Event date, number of guests, location, any special requests..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+          <p class="form-note">We reply within 24 hours. For urgent requests, call/text 925-483-8887.</p>
+          <div class="form-message success" id="formSuccess">
+            ✅ Message sent! We'll get back to you within 24 hours.
+          </div>
+          <div class="form-message error" id="formError">
+            Something went wrong. Please call us at 925-483-8887.
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── Footer ─── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Dirty <span>Delta</span> Water</div>
+      <div class="footer-copy">© 2026 Dirty Delta Water · Contra Costa County, CA · Women-Owned Business</div>
+      <div class="footer-links">
+        <a href="https://www.tiktok.com/@dirty.delta.water" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.instagram.com/dirtydeltawater" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.yelp.com/biz/dirty-delta-water-pittsburg?uid=D3fEkSoFUUeKTjbFR5C1kA" target="_blank" rel="noopener">Yelp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ─── Mobile Nav ───
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+    function closeMobile() {
+      mobileMenu.classList.remove('open');
+    }
+
+    // ─── Scroll Animations ───
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // ─── Contact Form (AJAX via Web3Forms) ───
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('.form-submit');
+      const successMsg = document.getElementById('formSuccess');
+      const errorMsg = document.getElementById('formError');
+
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+
+      try {
+        const data = new FormData(form);
+        const payload = Object.fromEntries(data.entries());
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const json = await res.json();
+        if (json.success) {
+          form.reset();
+          successMsg.style.display = 'block';
+          submitBtn.textContent = 'Sent!';
+        } else {
+          throw new Error(json.message || 'Form submit failed');
+        }
+      } catch {
+        errorMsg.style.display = 'block';
+        submitBtn.textContent = 'Send Message';
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+</html>
