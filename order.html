@@ -364,8 +364,8 @@
 
       <!-- ── Order types ── -->
       <div class="card">
-        <span class="section-label">Step 2 · Pick Your Drinks</span>
-        <h2>What Would You Like to Order?</h2>
+        <span class="section-label">Step 2 · What Are You Craving?</span>
+        <h2>What Can We Get You?</h2>
         <p class="hint">Check everything you want — each one opens its options below.</p>
         <div class="opts" id="orderTypes"></div>
       </div>
@@ -436,6 +436,25 @@
         <div class="opts cols-2" id="redbullSyrups"></div>
       </div>
 
+      <!-- ── Cookies ── -->
+      <div class="card reveal" data-block="cookie">
+        <span class="section-label">Cookies · Fresh Baked</span>
+        <h2>Fresh Baked Cookies</h2>
+        <p class="hint">5 flavors to choose from — pick your quantity below.</p>
+
+        <div style="margin-bottom:16px;text-align:center;">
+          <img src="images/4260c68da8d5e8d72363be26426d7bc0b9bfb4ec-14.jpg" alt="Cookie flavors and pricing" style="width:100%;border-radius:calc(var(--radius) - 4px);display:block;" />
+        </div>
+
+        <div class="subhead">Choose Your Quantity</div>
+        <div class="opts cols-2" id="cookieQty"></div>
+
+        <div class="field" style="margin-top:16px">
+          <label for="cookie_notes">Flavor Preferences</label>
+          <textarea id="cookie_notes" name="cookie_notes" placeholder="Let us know which flavors you want! e.g. 2 choco chip, 1 s'mores, 2 biscoff"></textarea>
+        </div>
+      </div>
+
       <!-- ── To-Go Kit ── -->
       <div class="card">
         <span class="section-label">Add-On</span>
@@ -495,6 +514,7 @@
       { id: 'lemonade',  label: 'Dirty Lemonade (32 oz)',     price: '$9',  block: 'lemonade' },
       { id: 'teacoffee', label: 'Dirty Tea or Coffee (32 oz)',price: '$10', block: 'teacoffee' },
       { id: 'redbull',   label: 'Dirty Red Bull (24 oz)',     price: '$12', block: 'redbull' },
+      { id: 'cookie',    label: 'Fresh Baked Cookies',        price: '',    block: 'cookie' },
     ];
     const regularDrinks = ['Black Diamond','Delta Sunrise','Delta Sunset','Delta Fog','P World','Pirates Punch'];
     const ccPremade = [
@@ -509,6 +529,13 @@
     const creamers = ['French Vanilla','Coconut','Caramel Macchiato'];
     const juices = ['Lemon','Lime'];
     const tcSauces = ['Chocolate','Caramel','White Chocolate'];
+    const cookieQtys = [
+      { label: '1 Cookie', price: '$7' },
+      { label: '2 Cookies', price: '$13' },
+      { label: 'Sampler Pack (5)', price: '$35' },
+      { label: 'Half Dozen (6)', price: '$40' },
+      { label: 'Dozen (12)', price: '$75' },
+    ];
     const payment = ['Card at Pickup (preferred)','Cash at Pickup','Venmo / PayPal / Zelle'];
 
     // ─── Render helpers ───
@@ -539,6 +566,7 @@
     render('tcSyrups', syrups.map(s => chip('teacoffee_syrups', s, 'checkbox')).join(''));
     render('tcSauces', tcSauces.map(s => chip('teacoffee_sauces', s, 'checkbox')).join(''));
     render('redbullSyrups', syrups.map(s => chip('redbull_flavors', s, 'checkbox')).join(''));
+    render('cookieQty', cookieQtys.map(q => chip('cookie_qty', q.label, 'radio', { price: q.price })).join(''));
     render('togoKit', chip('togo_kit', 'Yes — make it a To-Go Kit', 'checkbox', { data: ' data-target="togo"' }));
     render('payment', payment.map(p => chip('payment', p, 'radio')).join(''));
 
